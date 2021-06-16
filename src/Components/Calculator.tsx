@@ -12,6 +12,11 @@ const Calculator=()=> {
         setNumber("")
     },[number]);
 
+    const clear =()=>{
+        setDisplay("")
+        setNumber("")
+    }
+
     const calculate =()=>{ 
         let cal = eval(display)
         console.log("cal",cal)
@@ -46,9 +51,7 @@ const Calculator=()=> {
             <button id="equal" onClick={()=> calculate()}>=</button>
             <button className="btn-calculator" id="*" onClick={(e)=> setNumber((e.target as unknown as Element).id)}>*</button>
             <button className="btn-calculator" id="/" onClick={(e)=> setNumber((e.target as unknown as Element).id)}>/</button>
-            <button id="clear" onClick={()=> {
-                setDisplay("")
-                setNumber("")}}>C</button>
+            <button id="clear" onClick={()=> clear()}>C</button>
         </div>
     </div>
     )
