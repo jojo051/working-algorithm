@@ -7,11 +7,6 @@ const Calculator=()=> {
     const[number,setNumber]=useState<string>("")
     const[display,setDisplay]=useState<string>("")
     
-    useEffect(()=>{
-        setDisplay(display+number)
-        setNumber("")
-    },[number]);
-
     const clear =()=>{
         setDisplay("")
         setNumber("")
@@ -19,14 +14,17 @@ const Calculator=()=> {
 
     const calculate =()=>{ 
         let cal = eval(display)
-        console.log("cal",cal)
         if (cal === undefined){
             setDisplay("")
         } else
             setDisplay(cal)
         
     };
-    console.log(number,display);
+    
+    useEffect(()=>{
+        setDisplay(display+number)
+        setNumber("")
+    },[number]);
     
     return(
     <div>

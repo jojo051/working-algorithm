@@ -8,7 +8,9 @@ const Home =()=> {
 
             <Link to="/calculator">Calculator</Link>
 
-            <Link to="/bubble">bubble</Link>            
+            <Link to="/bubble"> bubble</Link>  
+
+            <Link to="/passwordmaker"> password maker</Link>            
         </>
     )
 }

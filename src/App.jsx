@@ -5,16 +5,18 @@ import {
   Route,
 } from 'react-router-dom';
 
-import Home from './Components/Home';
-import Calculator from './Components/Calculator';
-import Bubble from './Components/Bubble';
+import Home from './components/Home';
+import Calculator from './components/Calculator';
+import Bubble from './components/Bubble';
+import PasswordMaker from './components/PasswordMaker';
 
 function App() {
   return (
     <div>
       <Router>
         <Switch>
-        <Route path="/bubble" component={Bubble} /> 
+          <Route path="/passwordmaker" component={PasswordMaker} /> 
+          <Route path="/bubble" component={Bubble} /> 
           <Route path="/calculator" component={Calculator} /> 
           <Route exact path="/" component={Home} />
         </Switch>
