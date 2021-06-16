@@ -1,14 +1,14 @@
 .app-calculator {
     display: grid;
-    width: 300px;
+    width: 50vw;
     margin: 20vh auto;
     grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 50px repeat(5, 30px);
+    grid-template-rows: 50px repeat(5, 50px);
     grid-template-areas:
       "res res res res"
-      "7 8 9 reset"
-      "4 5 6 reset"
       "1 2 3 reset"
+      "4 5 6 reset"
+      "7 8 9 reset"
       "0 dot plus minus"
       "equal equal times div";
     border: 2px solid teal;
@@ -20,7 +20,7 @@
     font-size: 2rem;
     grid-area: res;
   }
-  .btn {
+  .btn-calculator {
     background: teal;
     color: white;
     border: 1px solid white;
@@ -28,8 +28,17 @@
     cursor: pointer;
     transition: 0.2s;
   }
-  .btn:hover {
+  .btn-calculator:hover {
     background: rgb(5, 190, 190);
+  }
+  .return-calculator{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    height: 5vh;
+    width: 20vw;
   }
   #equal {
     grid-area: equal;

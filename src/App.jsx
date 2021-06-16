@@ -7,13 +7,15 @@ import {
 
 import Home from './Components/Home';
 import Calculator from './Components/Calculator';
+import Bubble from './Components/Bubble';
 
 function App() {
   return (
     <div>
       <Router>
         <Switch>
-          <Route path="/" component={Calculator} /> 
+        <Route path="/bubble" component={Bubble} /> 
+          <Route path="/calculator" component={Calculator} /> 
           <Route exact path="/" component={Home} />
         </Switch>
       </Router>
