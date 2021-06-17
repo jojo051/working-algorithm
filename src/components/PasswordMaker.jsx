@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import'./passwordmaker.css';
 
 const PasswordMaker = () => {
@@ -57,34 +58,38 @@ const PasswordMaker = () => {
     },[passwordOutput])
 
     return (
-    <div className="app-password">
+    <div className="body-password">
+
         <div>
-            <input type="text" id="password-output" ref={passwordOutputRef} value={passwordOutput} readonly></input>
-        </div>    
-        <div className="range-container-password">
-
-            <input type="range" id="password-length" min="4" max="24" value={valuePassLength} onChange={(e)=> setValuePassLength(e.target.value)}></input>
-
-            <input type="text" id="display-password-length" value={valuePassLength} readonly></input>
-
+            <Link className="btn-calculator return-calculator" to="/">&#9754; Go Home</Link>
         </div>
 
-        <div className="checkbox-container-password">
-            <input type="checkbox" id="lowercase" onClick={(e)=> setLowercaseChecked(e.target.checked ? true : false)} ></input>
-            <label htmlFor="lowercase">a-z</label>
+        <div className="app-password">
+            <div>
+                <input type="text" id="password-output" ref={passwordOutputRef} value={passwordOutput} readonly></input>
+            </div>    
 
-            <input type="checkbox" id="uppercase" onClick={(e)=> setUppercaseChecked(e.target.checked ? true : false)} ></input>
-            <label htmlFor="uppercase">A-Z</label>
+            <div className="range-container-password">
+                <input type="range" id="password-length" min="4" max="24" value={valuePassLength} onChange={(e)=> setValuePassLength(e.target.value)}></input>
+                <input type="text" id="display-password-length" value={valuePassLength} readonly></input>
+            </div>
 
-            <input type="checkbox" id="numbers" onClick={(e)=> setNumbersChecked(e.target.checked ? true : false)} ></input>
-            <label htmlFor="numbers">0-9</label>
+            <div className="checkbox-container-password">
+                <input type="checkbox" id="lowercase" onClick={(e)=> setLowercaseChecked(e.target.checked ? true : false)} ></input>
+                <label htmlFor="lowercase">a-z</label>
 
-            <input type="checkbox" id="symbols" onClick={(e)=> setSymbolsChecked(e.target.checked ? true : false)} ></input>
-            <label htmlFor="symbols">!-?</label>
+                <input type="checkbox" id="uppercase" onClick={(e)=> setUppercaseChecked(e.target.checked ? true : false)} ></input>
+                <label htmlFor="uppercase">A-Z</label>
+
+                <input type="checkbox" id="numbers" onClick={(e)=> setNumbersChecked(e.target.checked ? true : false)} ></input>
+                <label htmlFor="numbers">0-9</label>
+
+                <input type="checkbox" id="symbols" onClick={(e)=> setSymbolsChecked(e.target.checked ? true : false)} ></input>
+                <label htmlFor="symbols">!-?</label>
+            </div>
+
+            <button id="generateButtonPassword" onClick={(e)=>generatePassword(e)}> {copySuccess} </button>
         </div>
-
-        <button id="generateButtonPassword" onClick={(e)=>generatePassword(e)}> {copySuccess} </button>
-        
     </div>
     );
 };

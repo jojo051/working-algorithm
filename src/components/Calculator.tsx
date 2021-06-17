@@ -27,7 +27,7 @@ const Calculator=()=> {
     },[number]);
     
     return(
-    <div>
+    <div className="body-calculator" >
         <div>
             <Link className="btn-calculator return-calculator" to="/">&#9754; Go Home</Link>
         </div>
