@@ -2,34 +2,42 @@ import { useEffect, useState } from "react";
 import "./formulaire.css";
 
 const Formulaire = () => {
-  const [pseudo, setPseudo] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("password");
-  const [errorSpeudo, setErrorSpeudo] = useState("");
-  const [error, setError] = useState(true);
-  const [errorEmail, setErrorEmail] = useState("");
-  const [errorPassword, setErrorPassword] = useState("");
-  const [errorConfirmPassword, setConfirmErrorPassword] = useState("");
+
   const [typePassword, setTypePassword] = useState("password");
+
+  const [pseudo, setPseudo] = useState("");
+  const [errorSpeudo, setErrorSpeudo] = useState("");
+  const [errorSpeudoVerif, setErrorSpeudoVerif] = useState(true);
+  const [email, setEmail] = useState("");
+  const [errorEmail, setErrorEmail] = useState("");
+  const [errorEmailVerif, setErrorEmailVerif] = useState(true);
+  const [password, setPassword] = useState("");
+  const [errorPassword, setErrorPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errorConfirmPassword, setConfirmErrorPassword] = useState("");
 
   const speudoChecker = (e) => {
     if (e.length > 0 && (e.length < 3 || e.length > 20)) {
       setErrorSpeudo("Le pseudo doit faire entre 3 et 20 caractères");
+      setErrorSpeudoVerif(true);
     } else if (!e.match(/^[a-zA-Z0-9_.-]*$/)) {
       setErrorSpeudo("Le pseudo ne doit pas contenir de caractères spéciaux");
+      setErrorSpeudoVerif(true);
     } else {
       setPseudo(e);
       setErrorSpeudo("");
+      setErrorSpeudoVerif(false)
     }
   };
 
   const emailChecker = (e) => {
     if (!e.match(/[\w_-]+@[\w-]+\.[a-z]{2,4}$/i)) {
       setErrorEmail("Le mail n'est pas valide");
+      setErrorEmailVerif(true);
     } else {
       setEmail(e);
       setErrorEmail("");
+      setErrorEmailVerif(false);
     }
   };
 
@@ -55,7 +63,7 @@ const Formulaire = () => {
       setErrorPassword("");
     }
   };
-
+  
   const verifPasswordChecker = (e) => {
     if (e !== password) {
       setConfirmErrorPassword("Les mots passes ne correspondent pas");
@@ -73,14 +81,21 @@ const Formulaire = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
-    if (password === confirmPassword && error === false) {
-      const data = { pseudo, email, password };
-      //ne pas envoyer le mot de passe en clair !!!
-      //don't submit password in clear text !!!
-      console.log(data);
-      alert("Inscription validée !");
-      //window.history.go(0);
-    }
+    if ( errorSpeudoVerif === true ) {
+      alert("speudo non valide");
+      }else if(errorEmailVerif === true ) {
+        alert("email non valide");
+        } else if (password === "" || confirmPassword === ""){
+          alert("les mots de passe ne sont pas identique ou valide");
+          
+          } else {
+            const data = { pseudo, email, password };
+            //ne pas envoyer le mot de passe en clair !!!
+            //don't submit password in clear text !!!
+            console.log(data);
+            alert("Inscription validée !");
+            window.history.go(0);
+          }
   };
 
   return (
