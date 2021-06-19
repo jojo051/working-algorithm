@@ -6,11 +6,13 @@ const Home =()=> {
         <>
             <h1>bienvenue sur mes petits projets</h1>
 
-            <Link to="/calculator">Calculator</Link>
+            <Link to="/calculator">Calculatrice</Link>
 
-            <Link to="/bubble"> bubble</Link>  
+            {/*<Link to="/bubble"> bubble</Link>*/}
 
-            <Link to="/passwordmaker"> password maker</Link>            
+            <Link to="/passwordmaker"> Generateur de password </Link>
+
+            <Link to="/formulaire"> Formulaire </Link>
         </>
     )
 }
