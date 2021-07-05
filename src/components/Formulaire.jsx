@@ -87,7 +87,6 @@ const Formulaire = () => {
         alert("email non valide");
         } else if (password === "" || confirmPassword === ""){
           alert("les mots de passe ne sont pas identique ou valide");
-          
           } else {
             const data = { pseudo, email, password };
             //ne pas envoyer le mot de passe en clair !!!
