@@ -76,16 +76,16 @@ const PasswordMaker = () => {
 
             <div className="checkbox-container-password">
                 <input type="checkbox" id="lowercase" onClick={(e)=> setLowercaseChecked(e.target.checked ? true : false)} ></input>
-                <label htmlFor="lowercase">a-z</label>
+                <label className="label-password-maker" htmlFor="lowercase">a-z</label>
 
                 <input type="checkbox" id="uppercase" onClick={(e)=> setUppercaseChecked(e.target.checked ? true : false)} ></input>
-                <label htmlFor="uppercase">A-Z</label>
+                <label className="label-password-maker" htmlFor="uppercase">A-Z</label>
 
                 <input type="checkbox" id="numbers" onClick={(e)=> setNumbersChecked(e.target.checked ? true : false)} ></input>
-                <label htmlFor="numbers">0-9</label>
+                <label className="label-password-maker" htmlFor="numbers">0-9</label>
 
                 <input type="checkbox" id="symbols" onClick={(e)=> setSymbolsChecked(e.target.checked ? true : false)} ></input>
-                <label htmlFor="symbols">!-?</label>
+                <label className="label-password-maker" htmlFor="symbols">!-?</label>
             </div>
 
             <button id="generateButtonPassword" onClick={(e)=>generatePassword(e)}> {copySuccess} </button>

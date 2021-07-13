@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./formulaire.css";
 
 const Formulaire = () => {
@@ -98,61 +99,67 @@ const Formulaire = () => {
   };
 
   return (
-    <div>
-      <form action="" onSubmit={submitForm}>
-        <div className="pseudo-container">
-          <label htmlFor="pseudo">Pseudo</label>
-          <input
-            required
-            id="pseudo"
-            type="text"
-            onChange={(e) => speudoChecker(e.target.value)}
-          ></input>
-          <span className="security-container">{errorSpeudo}</span>
-        </div>
+    <div className="body-formulary">
+      <div className="btn-return">
+        <Link className="btn-form return-form" to="/">&#9754; Go Home</Link>
+      </div>
 
-        <div className="email-container">
-          <label htmlFor="email">Email</label>
-          <input
-            required
-            id="email"
-            type="text"
-            onChange={(e) => emailChecker(e.target.value)}
-          ></input>
-          <span className="security-container">{errorEmail}</span>
-        </div>
+      <div className="formulare-app" >
+        <form className="form-formulary" action="" onSubmit={submitForm}>
+          <div className="pseudo-container">
+            <label className="label-formulary" htmlFor="pseudo">Pseudo</label>
+            <input className="input-formulary"
+              required
+              id="pseudo"
+              type="text"
+              onChange={(e) => speudoChecker(e.target.value)}
+            ></input>
+            <span className="security-container">{errorSpeudo}</span>
+          </div>
 
-        <div className="password-container">
-          <label htmlFor="password">Mot de passe</label>
-          <input
-            required
-            id="password"
-            type={typePassword}
-            onChange={(e) => passwordChecker(e.target.value)}
-          ></input>
-          <button
-            type="button"
-            onClick={(e) => viewPassword(e.target.form[2].type)}
-          >
-            view mdp
-          </button>
-          <p id="progress-bar"></p>
-          <span className="security-container">{errorPassword}</span>
-        </div>
+          <div className="email-container">
+            <label className="label-formulary" htmlFor="email">Email</label>
+            <input className="input-formulary"
+              required
+              id="email"
+              type="text"
+              onChange={(e) => emailChecker(e.target.value)}
+            ></input>
+            <span className="security-container">{errorEmail}</span>
+          </div>
 
-        <div className="confirm-container">
-          <label htmlFor="confirm">Confirmer mot de passe</label>
-          <input
-            required
-            id="confirm"
-            type="password"
-            onChange={(e) => verifPasswordChecker(e.target.value)}
-          ></input>
-          <span className="security-container">{errorConfirmPassword}</span>
-        </div>
+          <div className="password-container">
+            <label className="label-formulary" htmlFor="password">Mot de passe</label>
+            <input className="input-formulary"
+              required
+              id="password"
+              type={typePassword}
+              onChange={(e) => passwordChecker(e.target.value)}
+            ></input>
+            <button
+              type="button"
+              onClick={(e) => viewPassword(e.target.form[2].type)}
+            >
+              view mdp
+            </button>
+            <p id="progress-bar"></p>
+            <span className="security-container">{errorPassword}</span>
+          </div>
 
-        <button type="submit">Valider</button>
-      </form>
+          <div className="confirm-container">
+            <label className="label-formulary" htmlFor="confirm">Confirmer mot de passe</label>
+            <input className="input-formulary"
+              required
+              id="confirm"
+              type="password"
+              onChange={(e) => verifPasswordChecker(e.target.value)}
+            ></input>
+            <span className="security-container">{errorConfirmPassword}</span>
+          </div>
+
+          <button type="submit">Valider</button>
+        </form>
+      </div>
     </div>
   );
 };

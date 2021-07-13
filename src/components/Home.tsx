@@ -1,19 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./home.css"
  
 const Home =()=> {
     return(
-        <>
-            <h1>bienvenue sur mes petits projets</h1>
+        <div className="homme-app" >
+            <h1 className="homme-title" >Bienvenue sur mes petits projets</h1>
 
-            <Link to="/calculator">Calculatrice</Link>
+            <Link className="btn-home" to="/calculator">Calculatrice</Link>
 
-            {/*<Link to="/bubble"> bubble</Link>*/}
+            {/*<Link className="btn-home" to="/bubble"> bubble</Link>*/}
 
-            <Link to="/passwordmaker"> Generateur de password </Link>
+            <Link className="btn-home" to="/passwordmaker"> Generateur de mot de passe </Link>
 
-            <Link to="/formulaire"> Formulaire </Link>
-        </>
+            <Link className="btn-home" to="/formulaire"> Formulaire </Link>
+        </div>
     )
 }
 

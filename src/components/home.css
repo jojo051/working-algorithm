@@ -1,0 +1,28 @@
+.homme-app{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+
+.homme-title{
+  font-size: 2em;
+  padding-bottom: 2em;
+  color: black;
+}
+
+.btn-home {
+  font-size: 1.5em;
+  background: teal;
+  color: white;
+  border: 1px solid white;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s;
+  margin-bottom: 1.5em;
+  padding: 10px 10px;
+}
+.btn-home:hover {
+  background: rgb(5, 190, 190);
+}

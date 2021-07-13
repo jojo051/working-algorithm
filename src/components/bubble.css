@@ -14,14 +14,14 @@
     filter: hue-rotate(0deg);
   }
   
-  @keyframes anim {
+/*   @keyframes anim {
     to {
       top: -250px;
       left: var(--left);
       opacity: 1;
       filter: hue-rotate(720deg);
     }
-  }
+  } */
   
   .h3-bubble {
     font-size: 10rem;
