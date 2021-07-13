@@ -14,6 +14,8 @@ const Home =()=> {
             <Link className="btn-home" to="/passwordmaker"> Generateur de mot de passe </Link>
 
             <Link className="btn-home" to="/formulaire"> Formulaire </Link>
+
+            <Link className="btn-home" to="/affichagetexte"> Affichage de texte </Link>
         </div>
     )
 }
