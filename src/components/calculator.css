@@ -27,26 +27,7 @@ align-items: center;
     font-size: 2rem;
     grid-area: res;
   }
-  .btn-calculator {
-    background: teal;
-    color: white;
-    border: 1px solid white;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: 0.2s;
-  }
-  .btn-calculator:hover {
-    background: rgb(5, 190, 190);
-  }
-  .return-calculator{
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    height: 5vh;
-    width: 20vw;
-  }
+  
   #equal {
     grid-area: equal;
   }

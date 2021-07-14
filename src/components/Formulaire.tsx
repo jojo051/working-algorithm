@@ -1,23 +1,23 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import BtnReturn from "./BtnReturn";
 import "./formulaire.css";
 
 const Formulaire = () => {
 
-  const [typePassword, setTypePassword] = useState("password");
+  const [typePassword, setTypePassword] = useState<string>("password");
 
-  const [pseudo, setPseudo] = useState("");
-  const [errorSpeudo, setErrorSpeudo] = useState("");
-  const [errorSpeudoVerif, setErrorSpeudoVerif] = useState(true);
-  const [email, setEmail] = useState("");
-  const [errorEmail, setErrorEmail] = useState("");
-  const [errorEmailVerif, setErrorEmailVerif] = useState(true);
-  const [password, setPassword] = useState("");
-  const [errorPassword, setErrorPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [errorConfirmPassword, setConfirmErrorPassword] = useState("");
+  const [pseudo, setPseudo] = useState<string>("");
+  const [errorSpeudo, setErrorSpeudo] = useState<string>("");
+  const [errorSpeudoVerif, setErrorSpeudoVerif] = useState<boolean>(true);
+  const [email, setEmail] = useState<string>("");
+  const [errorEmail, setErrorEmail] = useState<string>("");
+  const [errorEmailVerif, setErrorEmailVerif] = useState<boolean>(true);
+  const [password, setPassword] = useState<string>("");
+  const [errorPassword, setErrorPassword] = useState<string>("");
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
+  const [errorConfirmPassword, setConfirmErrorPassword] = useState<string>("");
 
-  const speudoChecker = (e) => {
+  const speudoChecker = (e:string) => {
     if (e.length > 0 && (e.length < 3 || e.length > 20)) {
       setErrorSpeudo("Le pseudo doit faire entre 3 et 20 caractères");
       setErrorSpeudoVerif(true);
@@ -31,7 +31,7 @@ const Formulaire = () => {
     }
   };
 
-  const emailChecker = (e) => {
+  const emailChecker = (e:string) => {
     if (!e.match(/[\w_-]+@[\w-]+\.[a-z]{2,4}$/i)) {
       setErrorEmail("Le mail n'est pas valide");
       setErrorEmailVerif(true);
@@ -42,7 +42,7 @@ const Formulaire = () => {
     }
   };
 
-  const passwordChecker = (e) => {
+  const passwordChecker = (e:string) => {
     if (
       !e.match(
         /^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$/
@@ -65,7 +65,7 @@ const Formulaire = () => {
     }
   };
   
-  const verifPasswordChecker = (e) => {
+  const verifPasswordChecker = (e:string) => {
     if (e !== password) {
       setConfirmErrorPassword("Les mots passes ne correspondent pas");
     } else {
@@ -74,13 +74,13 @@ const Formulaire = () => {
     }
   };
 
-  const viewPassword = (e) => {
+  const viewPassword = (e: string) => {
     if (e === "password") {
       setTypePassword("text");
     } else setTypePassword("password");
   };
 
-  const submitForm = (e) => {
+  const submitForm = (e:any) => {
     e.preventDefault();
     if ( errorSpeudoVerif === true ) {
       alert("speudo non valide");
@@ -100,10 +100,7 @@ const Formulaire = () => {
 
   return (
     <div className="body-formulary">
-      <div className="btn-return">
-        <Link className="btn-form return-form" to="/">&#9754; Go Home</Link>
-      </div>
-
+      <BtnReturn/>
       <div className="formulare-app" >
         <form className="form-formulary" action="" onSubmit={submitForm}>
           <div className="pseudo-container">
@@ -138,7 +135,7 @@ const Formulaire = () => {
             ></input>
             <button
               type="button"
-              onClick={(e) => viewPassword(e.target.form[2].type)}
+              onClick={(e) => viewPassword((e.target as HTMLFormElement).form[2].type)}
             >
               view mdp
             </button>

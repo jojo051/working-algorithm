@@ -1,4 +1,5 @@
 import React, { useEffect, useState} from "react";
+import BtnReturn from "./BtnReturn";
 
 const Displaytexte =()=>{
   
@@ -32,6 +33,7 @@ const Displaytexte =()=>{
 
     return (
         <section className="">
+          <BtnReturn/>
           <h1>Affichage de texte lettre par lettre</h1>
             <form action="" onSubmit={submitForm}>
             <input 

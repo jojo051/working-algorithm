@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import BtnReturn from './BtnReturn';
 import'./passwordmaker.css';
 
 const PasswordMaker = () => {
@@ -61,7 +62,7 @@ const PasswordMaker = () => {
     <div className="body-password">
 
         <div>
-            <Link className="btn-calculator return-calculator" to="/">&#9754; Go Home</Link>
+            <BtnReturn/>
         </div>
 
         <div className="app-password">

@@ -1,5 +1,6 @@
 import { useEffect, useState} from "react";
 import { Link } from "react-router-dom";
+import BtnReturn from "./BtnReturn";
 import "./calculator.css";
 
 const Calculator=()=> {
@@ -29,7 +30,7 @@ const Calculator=()=> {
     return(
     <div className="body-calculator" >
         <div>
-            <Link className="btn-calculator return-calculator" to="/">&#9754; Go Home</Link>
+            <BtnReturn/>
         </div>
         <div className="app-calculator">
             <h3 className="h3-calculator"id="result">{display}</h3>
