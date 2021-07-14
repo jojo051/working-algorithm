@@ -100,7 +100,7 @@ const Formulaire = () => {
 
   return (
     <div className="body-formulary">
-      <BtnReturn/>
+        <BtnReturn/>      
       <div className="formulare-app" >
         <form className="form-formulary" action="" onSubmit={submitForm}>
           <div className="pseudo-container">
