@@ -5,7 +5,7 @@ import "./btnReturn.css"
 const BtnReturn =()=> {
   return(
     <>
-    <Link className="btn return" to="/">&#9754; Go Home</Link>
+      <Link className="btn return" to="/">&#9754; Go Home</Link>
     </>
   )
 }

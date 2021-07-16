@@ -26,3 +26,6 @@
 .btn-home:hover {
   background: rgb(5, 190, 190);
 }
+.btn-home:focus{
+  
+}

@@ -28,10 +28,8 @@ const Calculator=()=> {
     },[number]);
     
     return(
-    <div className="body-calculator" >
-        <div>
-            <BtnReturn/>
-        </div>
+    <div className="body-calculator" >     
+        <BtnReturn/>
         <div className="app-calculator">
             <h3 className="h3-calculator"id="result">{display}</h3>
             <button className="btn-calculator" id="1" onClick={(e)=> setNumber((e.target as unknown as Element).id)}>1</button>

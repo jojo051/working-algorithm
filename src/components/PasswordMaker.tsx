@@ -4,7 +4,7 @@ import'./passwordmaker.css';
 
 const PasswordMaker = () => {
 
-    const[passwordOutput,setPasswordOutput] = useState<string>("Générateur de MDP");
+    const[passwordOutput,setPasswordOutput] = useState<string>("Générateur de Mot De Passe");
     const[valuePassLength, setValuePassLength] = useState<number>(8);
     const[lowercaseChecked, setLowercaseChecked] = useState<boolean>(false);
     const[uppercaseChecked, setUppercaseChecked] = useState<boolean>(false);
@@ -59,11 +59,7 @@ const PasswordMaker = () => {
 
     return (
     <div className="body-password">
-
-        <div>
-            <BtnReturn/>
-        </div>
-
+        <BtnReturn/>
         <div className="app-password">
             <div>
                 <input type="text" id="password-output" ref={passwordOutputRef} value={passwordOutput} ></input>
